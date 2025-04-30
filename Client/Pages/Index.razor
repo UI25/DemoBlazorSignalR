@@ -18,7 +18,7 @@
         }
         else
         {
-            
+
             <table class="table">
                 <thead>
                     <tr>
@@ -56,13 +56,14 @@
     Book[] books;
 
     [Inject] ModalService ModalService { get; set; } = default!;
-    [Inject] protected PreloadService PreloadService { get; set; }
+    
 
     private ConfirmDialog deleteDialog;
 
     private HubConnection hubConnection;
 
     protected override async Task OnInitializedAsync(){
+        
         hubConnection = new HubConnectionBuilder()
             .WithUrl(NavigationManager.ToAbsoluteUri("/hubs/broadcasthub"))
             .WithAutomaticReconnect()
@@ -73,11 +74,16 @@
             CallLoadData();
             StateHasChanged();
         });
-
-        await hubConnection.StartAsync();
             
         await LoadData();
 
+    }
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await hubConnection.StartAsync();            
+        }
     }
 
     private async Task HandleDelete(string Id)

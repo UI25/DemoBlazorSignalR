@@ -22,6 +22,21 @@
 @code {
     Sidebar sidebar;
     IEnumerable<NavItem> navItems;
+    [Inject] protected PreloadService PreloadService { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        PreloadService.Show();
+    }
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await Task.Delay(2000);
+            PreloadService.Hide();
+            StateHasChanged();
+        }
+    }
 
     private async Task<SidebarDataProviderResult> SidebarDataProvider(SidebarDataProviderRequest request)
     {

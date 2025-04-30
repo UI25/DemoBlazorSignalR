@@ -7,32 +7,42 @@
 <h3>EditBook</h3>
 <br/>
 <div class="row">
-    <EditForm Model="book" FormName="EditBook" OnValidSubmit="handleEditBook">
+    <EditForm Model="book"  FormName="EditBook" OnValidSubmit="handleEditBook">
         <DataAnnotationsValidator />
         <InputText type="hidden" @bind="@book.Id" />
-        <div class="mb-3">
-            <label for="Name" class="form-label">Name</label>
-            <InputText id="Name" class="form-control" @bind-Value="@book.Name" />
-            <ValidationMessage For="@(() => book.Name)" class="alert-danger" />
+        <div class="form-group row mb-2">
+            <label for="Name" class="col-md-2 col-form-label">Name</label>
+            <div class="col-md-10">
+                <InputText class="form-control" @bind-Value="@book.Name"  />
+                <ValidationMessage For="@(() => book.Name)" class="alert-danger" />
+            </div>
         </div>
-        <div class="mb-3">
-            <label for="Name" class="form-label">ISBN</label>
-            <InputText id="Name" class="form-control" @bind-Value="@book.Isbn" />
-            <ValidationMessage For="@(() => book.Isbn)" class="alert-danger" />
+        <div class="form-group row mb-2">
+            <label for="ISBN" class="col-md-2 col-form-label">ISBN</label>
+            <div class="col-md-10">
+                <InputText class="form-control" @bind-Value="@book.Isbn" />
+                <ValidationMessage For="@(() => book.Isbn)" class="alert-danger" />
+            </div>
         </div>
-        <div class="mb-3">
-            <label for="Name" class="form-label">Author</label>
-            <InputText id="Name" class="form-control" @bind-Value="@book.Author" />
-            <ValidationMessage For="@(() => book.Author)" class="alert-danger" />
+        <div class="form-group row mb-2">
+            <label for="Author" class="col-md-2 col-form-label">Author</label>
+            <div class="col-md-10">
+                <InputText class="form-control" @bind-Value="@book.Author" />
+                <ValidationMessage For="@(() => book.Author)" class="alert-danger" />
+            </div>
         </div>
-        <div class="mb-3">
-            <label for="Name" class="form-label">Price</label>
-            <InputNumber id="Name" class="form-control" @bind-Value="@book.Price" />
-            <ValidationMessage For="@(() => book.Price)" class="alert-danger" />
+        <div class="form-group row mb-2">
+            <label for="Price" class="col-md-2 col-form-label">Price</label>
+            <div class="col-md-10">
+                <InputNumber  class="form-control" @bind-Value="@book.Price" />
+                <ValidationMessage For="@(() => book.Price)" />
+            </div>
         </div>
-        <div class="mb-3">
+        <div class="row">
+            <div class="col-md-12 text-right">
             <button type="submit" class="btn btn-primary">Update</button>
             <button type="button" class="btn btn-secondary" @onclick="@Cancel">Cancel</button>
+            </div>
         </div>
     </EditForm>
 </div>
