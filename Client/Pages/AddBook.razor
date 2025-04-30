@@ -1,0 +1,79 @@
+﻿@page "/addbook"
+
+
+@inject NavigationManager NavigationManager
+@inject IBookService BookService
+
+
+<h2>Create Book</h2>
+<hr />
+<EditForm Model="book" FormName="AddBook" OnValidSubmit="handleAddBook">
+    <DataAnnotationsValidator />
+    <InputText type="hidden" @bind="@book.Id" />
+    <div class="mb-3">
+        <label for="Name" class="form-label">Name</label>
+        <InputText id="Name" class="form-control" @bind-Value="@book.Name" />
+        <ValidationMessage For="@(() => book.Name)" class="alert-danger" />
+    </div>
+    <div class="mb-3">
+        <label for="Name" class="form-label">ISBN</label>
+        <InputText id="Name" class="form-control" @bind-Value="@book.Isbn" />
+        <ValidationMessage For="@(() => book.Isbn)" class="alert-danger" />
+    </div>
+    <div class="mb-3">
+        <label for="Name" class="form-label">Author</label>
+        <InputText id="Name" class="form-control" @bind-Value="@book.Author" />
+        <ValidationMessage For="@(() => book.Author)" class="alert-danger" />
+    </div>
+    <div class="mb-3">
+        <label for="Name" class="form-label">Price</label>
+        <InputNumber id="Name" class="form-control" @bind-Value="@book.Price" />
+        <ValidationMessage For="@(() => book.Price)" class="alert-danger" />
+    </div>
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary">Save</button>
+        <button type="button" class="btn btn-secondary" @onclick="@Cancel">Cancel</button>
+    </div>
+</EditForm>
+
+@code {
+    private HubConnection hubConnection;
+
+    [SupplyParameterFromForm(FormName = "AddBook")]
+    Book book { get; set; } = new Book();
+
+    protected override async Task OnInitializedAsync()
+    {
+        hubConnection = new HubConnectionBuilder()
+            .WithUrl(NavigationManager.ToAbsoluteUri("/hubs/broadcasthub"))
+            .Build();
+
+        await hubConnection.StartAsync();
+    }
+
+    protected async Task handleAddBook()
+    {
+        book = await BookService.AddBook(this.book);
+        if(book != null)
+        {
+            await hubConnection.SendAsync("SendMessage");
+            NavigationManager.NavigateTo("/");
+        }
+       
+    }
+
+    Task SendMessage() => hubConnection.SendAsync("SendMessage");
+
+    public bool IsConnected =>
+        hubConnection.State == HubConnectionState.Connected;
+
+    public void Dispose()
+    {
+        _ = hubConnection.DisposeAsync();
+    }
+
+    void Cancel()
+    {
+        NavigationManager.NavigateTo("/");
+    }
+}

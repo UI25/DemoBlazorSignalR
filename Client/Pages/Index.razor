@@ -1,0 +1,144 @@
+﻿@page "/"
+
+
+@inject NavigationManager NavigationManager
+@inject IBookService BookService
+
+<div class="container-fluid">
+    <div class="row mb-3">
+        <h3>Book Details</h3>
+        <p>
+            <a href="/addbook" class="btn btn-primary">Create New Book</a>
+        </p>
+    </div>
+    <div class="row mb-3">
+        @if (books == null)
+        {
+            <p>Not Found Book</p>
+        }
+        else
+        {
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>ISBN</th>
+                        <th>Author</th>
+                        <th>Price</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var book in books)
+                    {
+                        <tr>
+                            <td>@book.Name</td>
+                            <td>@book.Isbn</td>
+                            <td>@book.Author</td>
+                            <td>@book.Price</td>
+                            <td>
+                                <a class="btn btn-primary" href="/editbook/@book.Id">Edit</a>
+                                <Button Color="ButtonColor.Danger" @onclick="()=>HandleDelete(book.Id)">Delete</Button>
+                            </td>
+                        </tr>
+
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+</div>
+<ConfirmDialog @ref="deleteDialog"/>
+
+
+@code{
+    Book[] books;
+
+    [Inject] ModalService ModalService { get; set; } = default!;
+    [Inject] protected PreloadService PreloadService { get; set; }
+
+    private ConfirmDialog deleteDialog;
+
+    private HubConnection hubConnection;
+
+    protected override async Task OnInitializedAsync(){
+        hubConnection = new HubConnectionBuilder()
+            .WithUrl(NavigationManager.ToAbsoluteUri("/hubs/broadcasthub"))
+            .WithAutomaticReconnect()
+            .Build();
+
+        hubConnection.On("RecieveMessage", () =>
+        {
+            CallLoadData();
+            StateHasChanged();
+        });
+
+        await hubConnection.StartAsync();
+            
+        await LoadData();
+
+    }
+
+    private async Task HandleDelete(string Id)
+    {
+        var confirmation = await deleteDialog.ShowAsync(
+            title: "Delete Book",
+            message1: "Are you sure you want to delete this book?");
+
+        if (confirmation)
+        {
+            var responce = await BookService.DeleteBook(Id);
+            if (responce)
+            {
+
+                if (IsConnected) await SendMessage();
+                await deleteDialog.DisposeAsync();
+            }
+            else
+            {
+
+            }
+
+        }
+        else
+        {
+            await deleteDialog.DisposeAsync();
+        }
+
+    }
+
+    Task SendMessage() => hubConnection.SendAsync("SendMessage");
+
+    public bool IsConnected => hubConnection.State == HubConnectionState.Connected;
+
+    private void CallLoadData()
+    {
+        Task.Run(async () =>
+        {
+            await LoadData();
+        });
+    }
+    protected async Task LoadData()
+    {
+        try
+        {
+            books = await BookService.GetBooks();
+            StateHasChanged();          
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+        finally
+        {
+            
+        }
+                           
+    }
+
+    public void Dispose()
+    {
+        _ = hubConnection.DisposeAsync();
+    }
+}

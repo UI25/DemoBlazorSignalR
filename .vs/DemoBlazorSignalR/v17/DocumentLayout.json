@@ -1,0 +1,134 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\DELL-Documents\\Projects\\DemoProjects\\DemoBlazorSignalR\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E00B9F26-F4C7-4E7C-BBAF-AB546134D626}|Client\\BlazorSignalR.Client.csproj|d:\\dell-documents\\projects\\demoprojects\\demoblazorsignalr\\client\\pages\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E00B9F26-F4C7-4E7C-BBAF-AB546134D626}|Client\\BlazorSignalR.Client.csproj|solutionrelative:client\\pages\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E00B9F26-F4C7-4E7C-BBAF-AB546134D626}|Client\\BlazorSignalR.Client.csproj|d:\\dell-documents\\projects\\demoprojects\\demoblazorsignalr\\client\\services\\bookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E00B9F26-F4C7-4E7C-BBAF-AB546134D626}|Client\\BlazorSignalR.Client.csproj|solutionrelative:client\\services\\bookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E00B9F26-F4C7-4E7C-BBAF-AB546134D626}|Client\\BlazorSignalR.Client.csproj|d:\\dell-documents\\projects\\demoprojects\\demoblazorsignalr\\client\\pages\\editbook.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E00B9F26-F4C7-4E7C-BBAF-AB546134D626}|Client\\BlazorSignalR.Client.csproj|solutionrelative:client\\pages\\editbook.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E00B9F26-F4C7-4E7C-BBAF-AB546134D626}|Client\\BlazorSignalR.Client.csproj|d:\\dell-documents\\projects\\demoprojects\\demoblazorsignalr\\client\\pages\\addbook.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E00B9F26-F4C7-4E7C-BBAF-AB546134D626}|Client\\BlazorSignalR.Client.csproj|solutionrelative:client\\pages\\addbook.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E00B9F26-F4C7-4E7C-BBAF-AB546134D626}|Client\\BlazorSignalR.Client.csproj|d:\\dell-documents\\projects\\demoprojects\\demoblazorsignalr\\client\\services\\ibookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E00B9F26-F4C7-4E7C-BBAF-AB546134D626}|Client\\BlazorSignalR.Client.csproj|solutionrelative:client\\services\\ibookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E00B9F26-F4C7-4E7C-BBAF-AB546134D626}|Client\\BlazorSignalR.Client.csproj|d:\\dell-documents\\projects\\demoprojects\\demoblazorsignalr\\client\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E00B9F26-F4C7-4E7C-BBAF-AB546134D626}|Client\\BlazorSignalR.Client.csproj|solutionrelative:client\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:2047757283:0:{bf84ea66-d821-4dba-b1b1-2777d8574775}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:861240488:0:{bf84ea66-d821-4dba-b1b1-2777d8574775}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainLayout.razor",
+              "DocumentMoniker": "D:\\DELL-Documents\\Projects\\DemoProjects\\DemoBlazorSignalR\\Client\\MainLayout.razor",
+              "RelativeDocumentMoniker": "Client\\MainLayout.razor",
+              "ToolTip": "D:\\DELL-Documents\\Projects\\DemoProjects\\DemoBlazorSignalR\\Client\\MainLayout.razor",
+              "RelativeToolTip": "Client\\MainLayout.razor",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-30T21:08:10.17Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EditBook.razor",
+              "DocumentMoniker": "D:\\DELL-Documents\\Projects\\DemoProjects\\DemoBlazorSignalR\\Client\\Pages\\EditBook.razor",
+              "RelativeDocumentMoniker": "Client\\Pages\\EditBook.razor",
+              "ToolTip": "D:\\DELL-Documents\\Projects\\DemoProjects\\DemoBlazorSignalR\\Client\\Pages\\EditBook.razor",
+              "RelativeToolTip": "Client\\Pages\\EditBook.razor",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAEwAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-30T18:51:41.798Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IBookService.cs",
+              "DocumentMoniker": "D:\\DELL-Documents\\Projects\\DemoProjects\\DemoBlazorSignalR\\Client\\Services\\IBookService.cs",
+              "RelativeDocumentMoniker": "Client\\Services\\IBookService.cs",
+              "ToolTip": "D:\\DELL-Documents\\Projects\\DemoProjects\\DemoBlazorSignalR\\Client\\Services\\IBookService.cs",
+              "RelativeToolTip": "Client\\Services\\IBookService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T18:50:34.492Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BookService.cs",
+              "DocumentMoniker": "D:\\DELL-Documents\\Projects\\DemoProjects\\DemoBlazorSignalR\\Client\\Services\\BookService.cs",
+              "RelativeDocumentMoniker": "Client\\Services\\BookService.cs",
+              "ToolTip": "D:\\DELL-Documents\\Projects\\DemoProjects\\DemoBlazorSignalR\\Client\\Services\\BookService.cs",
+              "RelativeToolTip": "Client\\Services\\BookService.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAowCMAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T18:50:15.811Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.razor",
+              "DocumentMoniker": "D:\\DELL-Documents\\Projects\\DemoProjects\\DemoBlazorSignalR\\Client\\Pages\\Index.razor",
+              "RelativeDocumentMoniker": "Client\\Pages\\Index.razor",
+              "ToolTip": "D:\\DELL-Documents\\Projects\\DemoProjects\\DemoBlazorSignalR\\Client\\Pages\\Index.razor",
+              "RelativeToolTip": "Client\\Pages\\Index.razor",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-30T18:49:24.269Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AddBook.razor",
+              "DocumentMoniker": "D:\\DELL-Documents\\Projects\\DemoProjects\\DemoBlazorSignalR\\Client\\Pages\\AddBook.razor",
+              "RelativeDocumentMoniker": "Client\\Pages\\AddBook.razor",
+              "ToolTip": "D:\\DELL-Documents\\Projects\\DemoProjects\\DemoBlazorSignalR\\Client\\Pages\\AddBook.razor",
+              "RelativeToolTip": "Client\\Pages\\AddBook.razor",
+              "ViewState": "AgIAACYAAAAAAAAAAAAQwD0AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-30T18:46:35.318Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
